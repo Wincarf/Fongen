@@ -1,0 +1,41 @@
+# Fongen Demo — Local Minecraft Server
+# A clean Paper server for testing the Fongen agent safely.
+
+services:
+  fongen-mc:
+    image: itzg/minecraft-server:latest
+    container_name: fongen-demo-mc
+    ports:
+      - "25575:25565"
+    environment:
+      EULA: "TRUE"
+      TYPE: "PAPER"
+      VERSION: "1.21.4"
+      ONLINE_MODE: "FALSE"
+      MODE: "creative"
+      DIFFICULTY: "peaceful"
+      LEVEL_TYPE: "FLAT"
+      LEVEL_NAME: "fongen-demo"
+      MOTD: "Fongen Demo Server"
+      MAX_PLAYERS: "5"
+      SPAWN_PROTECTION: "0"
+      VIEW_DISTANCE: "8"
+      SIMULATION_DISTANCE: "8"
+      ENABLE_COMMAND_BLOCK: "TRUE"
+      OPS: "Fongen"
+      WHITELIST: "Fongen"
+      ENFORCE_WHITELIST: "FALSE"
+      MEMORY: "2G"
+      TZ: "UTC"
+    volumes:
+      - fongen-mc-data:/data
+    restart: "no"
+    healthcheck:
+      test: ["CMD", "mc-health"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+
+volumes:
+  fongen-mc-data:

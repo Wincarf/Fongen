@@ -1,0 +1,23 @@
+# Model weights and training data (too large, mounted at runtime)
+*.gguf
+*.pt
+*.bin
+*.safetensors
+fongen-lora/
+fongen-merged/
+fongen-gguf/
+plaicraft-data/
+training-data/
+llama.cpp/
+*.log
+
+# Secrets
+.env
+.env.local
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+node_modules/
