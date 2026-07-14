@@ -161,10 +161,10 @@ The agent includes a **SafetyGuard** that:
 
 ```bash
 # Clone the Onyxz framework repository (agent runtime: schemas, reflex, body, planner)
-git clone <onyxz-repo-url> Onyxz
+git clone https://github.com/wincarf/onyxz
 
 # Clone this repository
-git clone <this-repo-url> Fongen
+git clone https://github.com/wincarf/fongen
 
 cd Onyxz
 npm install
